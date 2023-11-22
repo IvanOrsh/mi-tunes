@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 
 import { Modal } from "@/shared/ui";
+import { AuthModal } from "@/features/auth";
 
 export default function ModalProvider() {
   const [isMounted, setIsMounted] = useState(false);
@@ -11,20 +12,11 @@ export default function ModalProvider() {
     setIsMounted(true);
   }, []);
 
-  console.log(isMounted);
-
   if (!isMounted) return null;
 
   return (
     <>
-      <Modal
-        isOpen
-        onChange={() => {}}
-        description="no description"
-        title="no title"
-      >
-        Modals
-      </Modal>
+      <AuthModal />
     </>
   );
 }
