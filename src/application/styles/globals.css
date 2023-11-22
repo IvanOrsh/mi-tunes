@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* TODO: color pallette for light mode */
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      /* TODO: color pallette for dark mode */
+    }
+  }
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--clr-bkg);
+  color-scheme: dark;
+}
