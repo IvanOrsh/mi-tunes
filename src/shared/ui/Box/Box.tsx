@@ -11,7 +11,6 @@ export default function Box({
 }: PropsWithChildren<BoxProps>) {
   return (
     <div className={twMerge("bg-zinc-900 rounded-lg h-fit w-full", className)}>
-      <h1>Box</h1>
       {children}
     </div>
   );
