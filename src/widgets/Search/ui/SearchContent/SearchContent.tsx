@@ -1,6 +1,7 @@
 "use client";
 
 import { MediaItem, Song } from "@/entities/Song";
+import { LikeButton } from "@/features/likeSong";
 
 type SearchContentProps = {
   songs: Song[];
@@ -24,7 +25,7 @@ export default function SearchContent({ songs }: SearchContentProps) {
             />
           </div>
 
-          {/* TODO: Like button goes here */}
+          <LikeButton songId={song.id} />
         </div>
       ))}
     </div>
