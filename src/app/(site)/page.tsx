@@ -1,7 +1,13 @@
 import { Header } from "@/widgets/Header";
 import { ListItem } from "@/shared/ui";
+import { Songs, getSongs } from "@/entities/Song";
 
-export default function Home() {
+// never cache, always update
+export const revalidate = 0;
+
+export default async function Home() {
+  const songs = await getSongs();
+
   return (
     <div className="bg-zinc-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
       <Header>
@@ -25,7 +31,7 @@ export default function Home() {
           <h1 className="text-white text-2xl font-semibold">Newest songs</h1>
         </div>
 
-        <div>List of Songs goes here!</div>
+        <Songs songs={songs} />
       </div>
     </div>
   );
