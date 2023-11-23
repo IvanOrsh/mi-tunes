@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 
-import { Song } from "@/entities/Song";
-import { useLoadImage } from "@/entities/Song/model/hooks/useLoadImage";
+import type { Song } from "../..";
+import { useLoadImage } from "../../model/hooks/useLoadImage";
 
 type MediaItemProps = {
   data: Song;
