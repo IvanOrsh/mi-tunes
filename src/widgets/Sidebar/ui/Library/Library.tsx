@@ -7,7 +7,7 @@ import { useAuthModal } from "@/features/auth";
 import { useUser } from "@/application/providers/UserProvider";
 import { useUploadModal } from "@/features/upload";
 import type { Song } from "@/entities/Song";
-import MediaItem from "./MediaItem";
+import { MediaItem } from "@/entities/Song";
 
 type LibraryProps = {
   songs: Song[];
