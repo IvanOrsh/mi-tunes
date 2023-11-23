@@ -9,6 +9,7 @@ const config: Config = {
     "./src/widgets/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/shared/api/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/features/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/entities/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
