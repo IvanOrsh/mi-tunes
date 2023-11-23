@@ -2,12 +2,15 @@
 
 import type { Song } from "../..";
 import SongItem from "../SongItem/SongItem";
+import { useOnPlay } from "@/features/playSong";
 
 type SongsProps = {
   songs: Song[];
 };
 
 export default function Songs({ songs }: SongsProps) {
+  const onPlay = useOnPlay(songs);
+
   if (songs.length === 0) {
     return <div className="mt-4 text-zinc-400">No songs available</div>;
   }
@@ -18,7 +21,7 @@ export default function Songs({ songs }: SongsProps) {
         <SongItem
           key={song.id}
           onClick={(id: string) => {
-            console.log(id);
+            onPlay(id);
           }}
           song={song}
         />
