@@ -1,4 +1,4 @@
-import { getSongsByTitle } from "@/entities/Song/model/actions/getSongsByTitle";
+import { getSongsByTitle } from "@/application/actions/getSongsByTitle";
 import { Header } from "@/widgets/Header";
 import { SearchInput, SearchContent } from "@/widgets/Search";
 

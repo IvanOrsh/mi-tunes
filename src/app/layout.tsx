@@ -6,7 +6,7 @@ import { SupabaseProvider } from "@/application/providers/Supabase";
 import { UserProvider } from "@/application/providers/UserProvider";
 import { ModalProvider } from "@/application/providers/ModalProvider";
 import { ToasterProvider } from "@/application/providers/ToasterProvider";
-import { getSongsByUserId } from "@/entities/Song/model/actions/getSongsByUserId";
+import { getSongsByUserId } from "@/application/actions/getSongsByUserId";
 import "@/application/styles/globals.css";
 
 const font = Figtree({ subsets: ["latin"] });
