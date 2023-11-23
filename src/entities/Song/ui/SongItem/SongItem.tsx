@@ -4,6 +4,7 @@ import Image from "next/image";
 
 import type { Song } from "../..";
 import { useLoadImage } from "../../model/hooks/useLoadImage";
+import { PlayButton } from "@/shared/ui";
 
 type SongItemProps = {
   song: Song;
@@ -30,7 +31,7 @@ export default function SongItem(props: SongItemProps) {
       </div>
 
       {/* info */}
-      <div className="flex flex-col items-start w-full p-4 gap-y-1">
+      <div className="flex flex-col items-start w-full pt-4 gap-y-1">
         <p className="font-semibold truncate w-full">{song.title}</p>
         <p className="text-neutral-400 text-sm pb-4 w-full truncate">
           By {song.author}
@@ -38,7 +39,9 @@ export default function SongItem(props: SongItemProps) {
       </div>
 
       {/* play button */}
-      <div>Play button</div>
+      <div className="absolute bottom-24 right-5">
+        <PlayButton />
+      </div>
     </div>
   );
 }
