@@ -3,6 +3,7 @@
 import { useGetSongById } from "../../model/services/useGetSongById";
 import usePlayer from "../../model/store/usePlayer";
 import { useLoadSongUrl } from "../../model/hooks/useLoadSongUrl";
+import PlayerContent from "../PlayerContent/PlayerContent";
 
 export default function Player() {
   const player = usePlayer();
@@ -15,6 +16,8 @@ export default function Player() {
   }
 
   return (
-    <div className="fixed bottom-0 bg-black w-full py-2 px-4 h-[80px]"></div>
+    <div className="fixed bottom-0 bg-black w-full py-2 px-4 h-[80px]">
+      <PlayerContent key={songUrl} song={song} songUrl={songUrl} />
+    </div>
   );
 }
