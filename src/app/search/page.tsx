@@ -2,6 +2,9 @@ import { getSongsByTitle } from "@/application/actions/getSongsByTitle";
 import { Header } from "@/widgets/Header";
 import { SearchInput, SearchContent } from "@/widgets/Search";
 
+// TODO: revalidate on search
+export const revalidate = 0;
+
 type SearchProps = {
   searchParams: {
     title: string;

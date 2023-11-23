@@ -3,7 +3,7 @@ import { ListItem } from "@/shared/ui";
 import { Songs } from "@/entities/Song";
 import { getSongs } from "@/application/actions/getSongs";
 
-// never cache, always update
+// TODO: revalidate cache
 export const revalidate = 0;
 
 export default async function Home() {
