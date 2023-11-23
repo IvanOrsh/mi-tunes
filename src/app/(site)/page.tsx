@@ -1,6 +1,7 @@
 import { Header } from "@/widgets/Header";
 import { ListItem } from "@/shared/ui";
-import { Songs, getSongs } from "@/entities/Song";
+import { Songs } from "@/entities/Song";
+import { getSongs } from "@/entities/Song/model/actions/getSongs";
 
 // never cache, always update
 export const revalidate = 0;
