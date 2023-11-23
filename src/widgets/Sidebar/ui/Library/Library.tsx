@@ -8,6 +8,7 @@ import { useUser } from "@/application/providers/UserProvider";
 import { useUploadModal } from "@/features/upload";
 import type { Song } from "@/entities/Song";
 import { MediaItem } from "@/entities/Song";
+import { useOnPlay } from "@/features/playSong";
 
 type LibraryProps = {
   songs: Song[];
@@ -17,6 +18,7 @@ export default function Library({ songs }: LibraryProps) {
   const authModal = useAuthModal();
   const uploadModal = useUploadModal();
   const { user } = useUser();
+  const onPlay = useOnPlay(songs);
 
   const onClick = () => {
     // check if user is logged in
@@ -46,7 +48,11 @@ export default function Library({ songs }: LibraryProps) {
 
       <div className="flex flex-col gap-y-2 mt-4 px-5">
         {songs.map((song) => (
-          <MediaItem key={song.id} onClick={() => {}} data={song} />
+          <MediaItem
+            key={song.id}
+            onClick={(id: string) => onPlay(id)}
+            data={song}
+          />
         ))}
       </div>
     </div>
