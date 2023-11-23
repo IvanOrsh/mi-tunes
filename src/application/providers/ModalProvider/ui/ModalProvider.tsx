@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-import { Modal } from "@/shared/ui";
 import { AuthModal } from "@/features/auth";
+import { UploadModal } from "@/features/upload";
 
 export default function ModalProvider() {
   const [isMounted, setIsMounted] = useState(false);
@@ -17,6 +17,7 @@ export default function ModalProvider() {
   return (
     <>
       <AuthModal />
+      <UploadModal />
     </>
   );
 }
