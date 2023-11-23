@@ -5,11 +5,19 @@ import { PropsWithChildren, useMemo } from "react";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 
+import type { Song } from "@/entities/Song";
 import { Box } from "@/shared/ui";
 import SidebarItem from "../SidebarItem/SidebarItem";
 import Library from "../Library/Library";
 
-export default function Sidebar({ children }: PropsWithChildren) {
+type SidebarProps = {
+  songs: Song[];
+};
+
+export default function Sidebar({
+  children,
+  songs,
+}: PropsWithChildren<SidebarProps>) {
   const pathname = usePathname();
 
   const routes = useMemo(
@@ -46,7 +54,7 @@ export default function Sidebar({ children }: PropsWithChildren) {
         </Box>
 
         <Box className="overflow-y-auto h-full">
-          <Library />
+          <Library songs={songs} />
         </Box>
       </div>
 
