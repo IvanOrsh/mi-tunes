@@ -18,11 +18,10 @@ type PlayerContentProps = {
 
 export default function PlayerContent({ song, songUrl }: PlayerContentProps) {
   const player = usePlayer();
-  const [volume, setVolume] = useState(1);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const Icon = isPlaying ? BsPauseFill : BsPlayFill;
-  const VolumeIcon = volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
+  const VolumeIcon = player.volume === 0 ? HiSpeakerXMark : HiSpeakerWave;
 
   const onPlayNext = () => {
     // no songs to play
@@ -61,7 +60,7 @@ export default function PlayerContent({ song, songUrl }: PlayerContentProps) {
   };
 
   const [play, { pause, sound }] = useSound(songUrl, {
-    volume,
+    volume: player.volume,
     onplay: () => setIsPlaying(true),
     onend: () => {
       setIsPlaying(false);
@@ -80,10 +79,10 @@ export default function PlayerContent({ song, songUrl }: PlayerContentProps) {
   };
 
   const toggleMute = () => {
-    if (volume === 0) {
-      setVolume(1);
+    if (player.volume === 0) {
+      player.setVolume(0.8);
     } else {
-      setVolume(0);
+      player.setVolume(0);
     }
   };
 
@@ -147,7 +146,10 @@ export default function PlayerContent({ song, songUrl }: PlayerContentProps) {
             className="cursor-pointer"
             size={30}
           />
-          <Slider value={volume} onChange={(value) => setVolume(value)} />
+          <Slider
+            value={player.volume}
+            onChange={(value) => player.setVolume(value)}
+          />
         </div>
       </div>
     </div>
