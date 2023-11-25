@@ -41,7 +41,7 @@ export async function POST(request: Request) {
       cancel_url: `${getUrl()}/`,
     });
 
-    return NextResponse.json({ session: session.id });
+    return NextResponse.json({ sessionId: session.id });
   } catch (err: any) {
     console.log(err);
     return NextResponse.json({
