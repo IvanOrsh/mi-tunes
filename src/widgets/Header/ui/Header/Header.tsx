@@ -13,6 +13,7 @@ import toast from "react-hot-toast";
 import { useAuthModal } from "@/features/auth";
 import { Button } from "@/shared/ui";
 import { useUser } from "@/application/providers/UserProvider";
+import usePlayer from "@/features/playSong/model/store/usePlayer";
 
 type HeaderProps = {
   className?: string;
@@ -21,6 +22,7 @@ type HeaderProps = {
 export default function Header(props: PropsWithChildren<HeaderProps>) {
   const { className, children } = props;
 
+  const player = usePlayer();
   const router = useRouter();
   const supabaseClent = useSupabaseClient();
   // TODO: refactor to pass useAuthModal from page?
@@ -30,7 +32,8 @@ export default function Header(props: PropsWithChildren<HeaderProps>) {
   const handleLogout = async () => {
     const error = await supabaseClent.auth.signOut();
 
-    // TODO: reset any playing songs in future
+    // reset any playing songs in future
+    player.reset();
 
     router.refresh();
 
