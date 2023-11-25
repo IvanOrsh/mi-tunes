@@ -27,6 +27,7 @@ export default function SongItem(props: SongItemProps) {
           fill
           src={imageUrl || "/images/placeholder.png"}
           alt="Song image"
+          sizes="(100vw - 2rem) 250px"
         />
       </div>
 

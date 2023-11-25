@@ -13,7 +13,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         `
         w-full
         rounded-full
-        bg-zinc-600
+        bg-[#f62d4c]
         border
         border-transparent
         p-2

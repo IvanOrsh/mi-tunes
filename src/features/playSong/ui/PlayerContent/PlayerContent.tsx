@@ -59,7 +59,7 @@ export default function PlayerContent({ song, songUrl }: PlayerContentProps) {
     player.setId(prevSong);
   };
 
-  const [play, { pause, sound }] = useSound(songUrl, {
+  const [play, { pause, sound, duration }] = useSound(songUrl, {
     volume: player.volume,
     onplay: () => setIsPlaying(true),
     onend: () => {

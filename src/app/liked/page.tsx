@@ -21,6 +21,7 @@ export default async function Liked() {
                 alt="Playlist"
                 fill
                 className="grayscale"
+                sizes="(100vw - 2rem) 100px"
               />
             </div>
 

@@ -9,9 +9,10 @@ export default function useOnPlay(songs: Song[]) {
   const { user } = useUser();
 
   const onPlay = (id: string) => {
-    if (!user) {
-      return authModal.onOpen();
-    }
+    // playing track must be allowed even to non-authenticated users
+    // if (!user) {
+    //   return authModal.onOpen();
+    // }
 
     player.setId(id);
     player.setIds(songs.map((song) => song.id));

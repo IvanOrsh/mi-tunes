@@ -17,8 +17,6 @@ export default function MediaItem({ data, onClick }: MediaItemProps) {
     if (onClick) {
       return onClick(data.id);
     }
-
-    // TODO: turn on player
   };
 
   return (
@@ -27,7 +25,12 @@ export default function MediaItem({ data, onClick }: MediaItemProps) {
       className="flex items-center gap-x-3 cursor-pointer hover:bg-zinc-800/50 w-full p-2 rounded-md"
     >
       <div className="relative rounded-md min-h-[48px] min-w-[48px] overflow-hidden">
-        <Image src={imageUrl || "/images/liked2.png"} alt="Media Item" fill />
+        <Image
+          src={imageUrl || "/images/liked2.png"}
+          alt="Media Item"
+          fill
+          sizes="(100vw - 2rem) 100px"
+        />
       </div>
 
       <div className="flex flex-col gap-y-1 overflow-hidden">
