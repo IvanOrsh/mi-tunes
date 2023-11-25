@@ -75,10 +75,16 @@ export default function Header(props: PropsWithChildren<HeaderProps>) {
 
         {/* mobile */}
         <nav className="flex md:hidden gap-x-2 items-center">
-          <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition duration-300">
+          <button
+            onClick={() => router.push("/")}
+            className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition duration-300"
+          >
             <HiHome className="text-black" size={30} />
           </button>
-          <button className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition duration-300">
+          <button
+            onClick={() => router.push("/search")}
+            className="rounded-full p-2 bg-white flex items-center justify-center hover:opacity-75 transition duration-300"
+          >
             <BiSearch className="text-black" size={30} />
           </button>
         </nav>
